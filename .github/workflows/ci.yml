@@ -1,0 +1,44 @@
+name: CI/CD Pipeline for Chest Cancer Classifier
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔄 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install dvc[s3] dvc[gs] dvc[azure] dvc[ssh] dvc[http] dvc[oss]  # install DVC with all remotes
+
+      - name: 💾 Configure DVC and Pull Data
+        env:
+          DVC_PASSWORD: ${{ secrets.DVC_PASSWORD }}
+          DVC_USER: ${{ secrets.DVC_USER }}
+        run: |
+          dvc remote modify origin --local auth basic
+          dvc remote modify origin --local user $DVC_USER
+          dvc remote modify origin --local password $DVC_PASSWORD
+          dvc pull
+
+      - name: 🏗 Run DVC Pipeline
+        run: |
+          dvc repro
+
+      - name: ✅ Evaluate Model
+        run: |
+          python src/evaluate.py
