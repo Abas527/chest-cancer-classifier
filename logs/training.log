@@ -1,0 +1,66 @@
+2025-07-25 19:47:43,742 - INFO - Training started
+2025-07-25 19:48:09,739 - INFO - 
+Epoch 1: Training Loss = 0.2301
+2025-07-25 19:48:16,027 - INFO - Validation Accuracy: 94.44%
+
+2025-07-25 19:48:41,340 - INFO - 
+Epoch 2: Training Loss = 0.0511
+2025-07-25 19:48:47,559 - INFO - Validation Accuracy: 91.67%
+
+2025-07-25 19:49:13,598 - INFO - 
+Epoch 3: Training Loss = 0.0250
+2025-07-25 19:49:19,919 - INFO - Validation Accuracy: 97.22%
+
+2025-07-25 19:49:46,344 - INFO - 
+Epoch 4: Training Loss = 0.0057
+2025-07-25 19:49:52,870 - INFO - Validation Accuracy: 94.44%
+
+2025-07-25 19:50:20,380 - INFO - 
+Epoch 5: Training Loss = 0.0127
+2025-07-25 19:50:26,793 - INFO - Validation Accuracy: 100.00%
+
+2025-07-25 19:50:54,937 - INFO - 
+Epoch 6: Training Loss = 0.0025
+2025-07-25 19:51:01,488 - INFO - Validation Accuracy: 100.00%
+
+2025-07-25 19:51:29,533 - INFO - 
+Epoch 7: Training Loss = 0.0014
+2025-07-25 19:51:35,891 - INFO - Validation Accuracy: 100.00%
+
+2025-07-25 19:52:06,192 - INFO - 
+Epoch 8: Training Loss = 0.0019
+2025-07-25 19:52:12,521 - INFO - Validation Accuracy: 100.00%
+
+2025-07-25 19:52:43,275 - INFO - 
+Epoch 9: Training Loss = 0.0007
+2025-07-25 19:52:49,751 - INFO - Validation Accuracy: 100.00%
+
+2025-07-25 19:53:19,983 - INFO - 
+Epoch 10: Training Loss = 0.0005
+2025-07-25 19:53:26,375 - INFO - Validation Accuracy: 100.00%
+
+2025-07-25 19:53:26,423 - INFO - Model saved to path
+2025-07-25 19:57:00,766 - INFO - Model is loaded
+2025-07-25 20:09:58,908 - INFO - Training started
+2025-07-25 20:13:54,926 - INFO - Training started
+2025-07-25 20:14:22,057 - INFO - Epoch 1: Training Loss = 0.2245
+2025-07-25 20:14:29,143 - INFO - Validation Accuracy: 97.22%
+2025-07-25 20:14:56,911 - INFO - Epoch 2: Training Loss = 0.0302
+2025-07-25 20:15:04,114 - INFO - Validation Accuracy: 97.22%
+2025-07-25 20:15:34,214 - INFO - Epoch 3: Training Loss = 0.0065
+2025-07-25 20:15:41,346 - INFO - Validation Accuracy: 97.22%
+2025-07-25 20:16:09,612 - INFO - Epoch 4: Training Loss = 0.0022
+2025-07-25 20:16:16,875 - INFO - Validation Accuracy: 97.22%
+2025-07-25 20:16:45,228 - INFO - Epoch 5: Training Loss = 0.0031
+2025-07-25 20:16:52,404 - INFO - Validation Accuracy: 97.22%
+2025-07-25 20:17:20,990 - INFO - Epoch 6: Training Loss = 0.0012
+2025-07-25 20:17:28,119 - INFO - Validation Accuracy: 97.22%
+2025-07-25 20:17:58,469 - INFO - Epoch 7: Training Loss = 0.0014
+2025-07-25 20:18:07,160 - INFO - Validation Accuracy: 97.22%
+2025-07-25 20:18:44,600 - INFO - Epoch 8: Training Loss = 0.0026
+2025-07-25 20:18:53,217 - INFO - Validation Accuracy: 97.22%
+2025-07-25 20:19:23,839 - INFO - Epoch 9: Training Loss = 0.0011
+2025-07-25 20:19:31,086 - INFO - Validation Accuracy: 97.22%
+2025-07-25 20:20:01,164 - INFO - Epoch 10: Training Loss = 0.0006
+2025-07-25 20:20:08,371 - INFO - Validation Accuracy: 97.22%
+2025-07-25 20:20:08,429 - INFO - Model saved to model.pth

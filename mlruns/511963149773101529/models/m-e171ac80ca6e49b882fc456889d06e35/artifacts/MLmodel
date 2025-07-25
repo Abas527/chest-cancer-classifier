@@ -1,0 +1,23 @@
+artifact_path: file:///C:/Users/HP/Desktop/ANIL/mlruns/511963149773101529/models/m-e171ac80ca6e49b882fc456889d06e35/artifacts
+flavors:
+  python_function:
+    config:
+      device: null
+    data: data
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.pytorch
+    pickle_module_name: mlflow.pytorch.pickle_module
+    python_version: 3.13.5
+  pytorch:
+    code: null
+    model_data: data
+    pytorch_version: 2.7.1+cpu
+mlflow_version: 3.1.0
+model_id: m-e171ac80ca6e49b882fc456889d06e35
+model_size_bytes: 44793959
+model_uuid: m-e171ac80ca6e49b882fc456889d06e35
+prompts: null
+run_id: ac624307501a423a9510e52cc0f749d0
+utc_time_created: '2025-07-25 14:35:08.498799'

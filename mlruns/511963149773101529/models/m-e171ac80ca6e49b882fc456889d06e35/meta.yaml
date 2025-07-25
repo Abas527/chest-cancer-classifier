@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/HP/Desktop/ANIL/mlruns/511963149773101529/models/m-e171ac80ca6e49b882fc456889d06e35/artifacts
+creation_timestamp: 1753454108454
+experiment_id: '511963149773101529'
+last_updated_timestamp: 1753454116995
+model_id: m-e171ac80ca6e49b882fc456889d06e35
+model_type: null
+name: model
+source_run_id: ac624307501a423a9510e52cc0f749d0
+status: 2
+status_message: null
