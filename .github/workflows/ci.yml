@@ -25,15 +25,15 @@ jobs:
           pip install -r requirements.txt
           pip install dvc[s3] dvc[gs] dvc[azure] dvc[ssh] dvc[http] dvc[oss]  # install DVC with all remotes
 
-      - name: 💾 Configure DVC and Pull Data
+      - name: Inject DVC auth credentials
         env:
           DVC_PASSWORD: ${{ secrets.DVC_PASSWORD }}
           DVC_USER: ${{ secrets.DVC_USER }}
         run: |
-          dvc remote modify origin --local auth basic
-          dvc remote modify origin --local user $DVC_USER
-          dvc remote modify origin --local password $DVC_PASSWORD
+          dvc remote modify origin user "$DVC_USER"
+          dvc remote modify origin password "$DVC_PASSWORD"
           dvc pull
+
 
       - name: 🏗 Run DVC Pipeline
         run: |
