@@ -1,0 +1,7 @@
+[core]
+    remote = origin
+['remote "origin"']
+    url = https://dagshub.com/Abas527/chest-cancer-classifier.dvc
+    auth = basic
+    user = Abas527
+    password = 0cabcfc6e7e8e42569e431c8c8c1686b119ea583
