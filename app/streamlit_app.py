@@ -17,7 +17,7 @@ CLASS_NAMES = ["adenocarcinoma", "normal"]
 
 # Step 1: Configure and pull from DVC (with DAGsHub auth)
 def setup_dvc():
-    if os.path.exists(".dvc") and os.path.exists("model.pth.dvc"):
+    if os.path.exists(".dvc") and os.path.exists("model.pth"):
         os.environ["DAGSHUB_USER"] = st.secrets["DAGSHUB_USER"]
         os.environ["DAGSHUB_TOKEN"] = st.secrets["DAGSHUB_TOKEN"]
 
@@ -30,7 +30,7 @@ def setup_dvc():
         subprocess.run(["dvc", "remote", "modify", "origin", "password", os.environ["DAGSHUB_TOKEN"]], check=True)
 
         # Pull model
-        subprocess.run(["dvc", "pull", "model.pth.dvc"], check=True)
+        subprocess.run(["dvc", "pull", "model.pth"], check=True)
     else:
         st.warning("DVC not initialized or model file not tracked.")
 
