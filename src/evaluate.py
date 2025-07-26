@@ -3,6 +3,7 @@
 import torch
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 import numpy as np
+import json
 
 def evaluate_model(model, data_loader, device, class_names, mode="test"):
     model.eval()
@@ -29,5 +30,9 @@ def evaluate_model(model, data_loader, device, class_names, mode="test"):
     print(f"Recall:    {recall:.2%}")
     print(f"F1-Score:  {f1:.2%}")
     print(f"Confusion Matrix:\n{cm}")
+
+
+    
+
 
     return acc * 100

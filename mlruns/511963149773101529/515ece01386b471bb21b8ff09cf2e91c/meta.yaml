@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/ANIL/mlruns/511963149773101529/515ece01386b471bb21b8ff09cf2e91c/artifacts
+end_time: 1753460777337
+entry_point_name: ''
+experiment_id: '511963149773101529'
+lifecycle_stage: active
+run_id: 515ece01386b471bb21b8ff09cf2e91c
+run_name: indecisive-wasp-840
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753460380897
+status: 3
+tags: []
+user_id: HP

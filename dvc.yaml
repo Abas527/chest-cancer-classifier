@@ -1,1 +1,24 @@
-# dvc.yaml
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+      - src/model.py
+      - src/data_loader.py
+      - data/raw  # assuming you're training from raw data
+    params:
+      - train.num_epochs
+      - train.lr
+      - train.base_dir
+      - train.save_path
+    outs:
+      - model.pth
+
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+      - src/evaluate.py
+      - model.pth
+      - src/data_loader.py
+      - data/raw
+
