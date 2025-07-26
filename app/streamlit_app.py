@@ -17,14 +17,22 @@ CLASS_NAMES = ["adenocarcinoma", "normal"]
 
 # Step 1: Configure and pull from DVC (with DAGsHub auth)
 def setup_dvc():
-    subprocess.run(["dvc", "remote", "remove", "origin"], stderr=subprocess.DEVNULL)
-    subprocess.run([
-        "dvc", "remote", "add", "-f", "origin",
-        "https://dagshub.com/Abas527/chest-cancer-classifier.dvc"
-    ])
-    subprocess.run(["dvc", "remote", "modify", "origin", "user", st.secrets["DVC_USER"]])
-    subprocess.run(["dvc", "remote", "modify", "origin", "password", st.secrets["DVC_PASSWORD"]])
-    subprocess.run(["dvc", "pull", "model.pth.dvc"], check=True)
+    if os.path.exists(".dvc") and os.path.exists("model.pth.dvc"):
+        os.environ["DAGSHUB_USER"] = st.secrets["DAGSHUB_USER"]
+        os.environ["DAGSHUB_TOKEN"] = st.secrets["DAGSHUB_TOKEN"]
+
+        dvc_remote = st.secrets["DVC_REMOTE_URL"]
+
+        # Configure DVC remote
+        subprocess.run(["dvc", "remote", "modify", "origin", "url", dvc_remote], check=True)
+        subprocess.run(["dvc", "remote", "modify", "origin", "auth", "basic"], check=True)
+        subprocess.run(["dvc", "remote", "modify", "origin", "user", os.environ["DAGSHUB_USER"]], check=True)
+        subprocess.run(["dvc", "remote", "modify", "origin", "password", os.environ["DAGSHUB_TOKEN"]], check=True)
+
+        # Pull model
+        subprocess.run(["dvc", "pull", "model.pth.dvc"], check=True)
+    else:
+        st.warning("DVC not initialized or model file not tracked.")
 
 # Step 2: Cache the model loading
 @st.cache_resource
