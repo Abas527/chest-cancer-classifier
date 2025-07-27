@@ -51,6 +51,7 @@ def train(num_epochs=10, lr=1e-4, base_dir="data/raw", save_path="model.pth"):
                 images, labels = images.to(device), labels.to(device)
 
                 # Forward
+                
                 outputs = model(images)
                 loss = criterion(outputs, labels)
 
