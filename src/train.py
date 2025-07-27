@@ -14,6 +14,7 @@ from src.model import build_model
 from src.data_loader import get_data_loaders
 from src.evaluate import evaluate_model
 from src.logger import get_logger
+import dagshub
 
 logger = get_logger("train")
 
@@ -34,10 +35,7 @@ def train(num_epochs=10, lr=1e-4, base_dir="data/raw", save_path="model.pth"):
 
     ### 🔁 MLflow Logging Starts Here ###
     # Ensure experiment exists or create it
-    mlflow.set_tracking_uri("file:///tmp/mlruns")  # Or wherever you want
-    mlflow.set_experiment("ChestCancerClassification")
-
-
+    dagshub.init(repo_owner='Abas527', repo_name='chest-cancer-classifier', mlflow=True)
 
     with mlflow.start_run():
         mlflow.log_param("model_architecture", "resnet18")
