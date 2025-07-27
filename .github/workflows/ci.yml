@@ -24,40 +24,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install torch==2.7.1+cpu torchvision==0.22.1+cpu --extra-index-url https://download.pytorch.org/whl/cpu
           pip install scikit-learn
-
-          pip install -r requirements.txt
-          pip install "dvc[http]"
-        env:
-          DAGSHUB_TOKEN:${{secrets.DAGSHUB_TOKEN}} 
-      - name: Inject DVC auth credentials
-        env:
-          DVC_PASSWORD: ${{ secrets.DVC_PASSWORD }}
-          DVC_USER: ${{ secrets.DVC_USER }}name: CI/CD Pipeline for Chest Cancer Classifier
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: 🔄 Checkout repository
-        uses: actions/checkout@v3
-
-      - name: 🐍 Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.12
-
-      - name: 📦 Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install torch==2.7.1+cpu torchvision==0.22.1+cpu --extra-index-url https://download.pytorch.org/whl/cpu
-          pip install scikit-learn
           pip install -r requirements.txt
           pip install "dvc[http]"
         env:
@@ -78,21 +44,6 @@ jobs:
         env:
           DAGSHUB_TOKEN: ${{ secrets.DAGSHUB_TOKEN }}
 
-      - name: ✅ Evaluate Model
-        run: |
-          python src/evaluate.py
-
-        run: |
-          dvc remote modify origin user "$DVC_USER"
-          dvc remote modify origin password "$DVC_PASSWORD"
-          dvc pull
-
-
-      - name: 🏗 Run DVC Pipeline
-        run: |
-          dvc repro
-        env:
-          DAGSHUB_TOKEN: ${{ secrets.DAGSHUB_TOKEN }}
       - name: ✅ Evaluate Model
         run: |
           python src/evaluate.py
