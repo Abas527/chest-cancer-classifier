@@ -27,6 +27,8 @@ jobs:
 
           pip install -r requirements.txt
           pip install "dvc[http]"
+        env:
+          DAGSHUB_TOKEN:${{secrets.DAGSHUB_TOKEN}} 
       - name: Inject DVC auth credentials
         env:
           DVC_PASSWORD: ${{ secrets.DVC_PASSWORD }}
@@ -40,7 +42,8 @@ jobs:
       - name: 🏗 Run DVC Pipeline
         run: |
           dvc repro
-
+        env:
+          DAGSHUB_TOKEN: ${{ secrets.DAGSHUB_TOKEN }}
       - name: ✅ Evaluate Model
         run: |
           python src/evaluate.py
