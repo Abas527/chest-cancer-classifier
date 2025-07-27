@@ -17,7 +17,9 @@ CLASS_NAMES = ["adenocarcinoma", "normal"]
 
 # Step 1: Configure and pull from DVC (with DAGsHub auth)
 def setup_dvc():
-    pass
+    if os.path.exists('.dvc') and os.getenv("DAGSHUB_TOKEN"):
+        subprocess.run(["dvc", "pull"], check=True)
+    
     
 
 # Step 2: Cache the model loading
