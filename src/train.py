@@ -34,7 +34,7 @@ def train(num_epochs=10, lr=1e-4, base_dir="data/raw", save_path="model.pth"):
 
     ### 🔁 MLflow Logging Starts Here ###
     # Ensure experiment exists or create it
-mlflow.set_tracking_uri("file:///tmp/mlruns")  # Or wherever you want
+    mlflow.set_tracking_uri("file:///tmp/mlruns")  # Or wherever you want
     mlflow.set_experiment("ChestCancerClassification")
 
 
