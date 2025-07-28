@@ -2,7 +2,7 @@
 
 # 🧠 Chest Cancer Classification (Normal vs. Adenocarcinoma)
 
-An end-to-end Deep Learning project for **chest cancer classification** using PyTorch, deployed with **FastAPI** for API inference, **Streamlit** for interactive UI, and enhanced with **MLflow, DVC, Docker, and CI/CD via GitHub Actions**. Trained and tracked via **DagsHub** with full experiment versioning and model reproducibility.
+An end-to-end Deep Learning project for **chest cancer classification** using PyTorch, deployed with **Streamlit** for interactive UI, and enhanced with **MLflow, DVC, Docker, and CI/CD via GitHub Actions**. Trained and tracked via **DagsHub** with full experiment versioning and model reproducibility.
 
 ---
 
