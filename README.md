@@ -203,7 +203,7 @@ Example: `.github/workflows/ci.yml`
 ## 🧑‍💻 Author
 
 **👤 Anil khatiwada**
-→ GitHub: [@cyberanil27](https://github.com/cyberanil27)
+→ GitHub: [@Abas527](https://github.com/Abas527)
 → Email: [cyberanil27@gmail.com]
 
 ---
